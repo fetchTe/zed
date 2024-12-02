@@ -94,7 +94,7 @@ jobs:
     timeout-minutes: 60
     name: (Linux) Run Clippy and tests
     runs-on:
-      - buildjet-16vcpu-ubuntu-2204
+      - ubuntu-latest
     steps:
       - name: Add Rust to the PATH
         run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
@@ -126,7 +126,7 @@ jobs:
     timeout-minutes: 60
     name: (Linux) Build Remote Server
     runs-on:
-      - buildjet-16vcpu-ubuntu-2204
+      - ubuntu-latest
     steps:
       - name: Add Rust to the PATH
         run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
@@ -152,7 +152,7 @@ jobs:
     timeout-minutes: 60
     name: Create a Linux bundle
     runs-on:
-      - buildjet-16vcpu-ubuntu-2004
+      - ubuntu-latest
     needs: [linux_tests]
     env:
       ZED_CLIENT_CHECKSUM_SEED: ${{ secrets.ZED_CLIENT_CHECKSUM_SEED }}
